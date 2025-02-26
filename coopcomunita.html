@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cooperativa di Comunità - Landing Page</title>
+  
+  <!-- Import Google Font Comfortaa -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Import Tailwind CSS da CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config per il font -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            comfortaa: ['Comfortaa', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Stili globali -->
+  <style>
+    * {
+      font-family: 'Comfortaa', sans-serif;
+    }
+  </style>
+
+  <!-- Add inline script for mobile menu toggle -->
+  <script>
+    function toggleMenu() {
+      const mobileNav = document.getElementById('mobile-nav');
+      if (mobileNav.classList.contains('hidden')) {
+        mobileNav.classList.remove('hidden');
+      } else {
+        mobileNav.classList.add('hidden');
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Rest of the HTML remains the same as the original file -->
+  <!-- NAVBAR -->
+  <header class="bg-black shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-white" aria-label="Cooperativa di Comunità">
+        Rovi - Spazio Creativo
+      </a>
+      <!-- Menu desktop -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#introduzione" class="text-white hover:text-green-1300 transition">Introduzione</a>
+        <a href="#ambiti" class="text-white hover:text-green-1300 transition">Attività</a>
+        <a href="#incentivi" class="text-white hover:text-green-1300 transition">Finanziamenti</a>
+        <a href="#struttura" class="text-white hover:text-green-1300 transition">Struttura</a>
+        <a href="#successo" class="text-white hover:text-green-1300 transition">Successi</a>
+        <a href="#contatti" class="text-white hover:text-green-1300 transition">Contatti</a>
+      </nav>
+      <!-- Bottone menu mobile -->
+      <button
+        class="md:hidden flex items-center text-green-1300 focus:outline-none"
+        onclick="toggleMenu()"
+        aria-label="Apri/Chiudi menu"
+      >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 5h16M4 12h16M4 19h16"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Menu mobile dropdown -->
+    <nav id="mobile-nav" class="bg-white shadow px-4 py-2 hidden md:hidden">
+      <a href="#introduzione" class="block py-1 hover:text-green-1300">Introduzione</a>
+      <a href="#ambiti" class="block py-1 hover:text-green-1300">Ambiti</a>
+      <a href="#incentivi" class="block py-1 hover:text-green-1300">Finanziamenti</a>
+      <a href="#struttura" class="block py-1 hover:text-green-1300">Struttura</a>
+      <a href="#successo" class="block py-1 hover:text-green-1300">Esempi</a>
+      <a href="#contatti" class="block py-1 hover:text-green-1300">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gray-800 text-white py-16" id="hero">
+    <div class="container mx-auto px-4">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Opportunità Concreta di Rilancio</h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-300">
+          I dati demografici e socioeconomici del nostro Comune mostrano
+          chiaramente la necessità e le opportunità di questa iniziativa.
+        </p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Demographic Decline -->
+        <div class="bg-gray-900 rounded-xl p-6 text-center">
+          <span class="text-red-500 text-4xl font-bold block mb-2">-11.07%</span>
+          <span class="text-gray-400">Calo Demografico</span>
+          <p class="mt-2 text-sm text-gray-500">2001-2023</p>
+        </div>
+        
+        <!-- Aging Index -->
+        <div class="bg-gray-900 rounded-xl p-6 text-center">
+          <span class="text-yellow-500 text-4xl font-bold block mb-2">335.2</span>
+          <span class="text-gray-400">Indice di Vecchiaia</span>
+          <p class="mt-2 text-sm text-gray-500">anziani per 100 giovani</p>
+        </div>
+
+        <!-- Average Age -->
+        <div class="bg-gray-900 rounded-xl p-6 text-center">
+          <span class="text-blue-500 text-4xl font-bold block mb-2">2.16</span>
+          <span class="text-gray-400">Dimensione Media Famiglie</span>
+          <p class="mt-2 text-sm text-gray-500">2001-2023</p>
+        </div>
+      </div>
+
+      <!-- Problems & Solutions Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Problems Column -->
+        <div class="bg-gray-900 rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-4 text-red-400">Problematiche Attuali - Dati ISTAT</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Declino demografico costante (-153 abitanti)
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Forte squilibrio generazionale (età media 50.2)
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Riduzione nuclei familiari (-28.5%)
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              Indice di Dipendenza (61.9) 
+            </li>
+          </ul>
+        </div>
+
+        <!-- Opportunities Column -->
+        <div class="bg-gray-900 rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-4 text-green-400">Dati Sondaggio Dinamiche Lavorative</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              58% lavori compatibili con Smart Working
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              59% preferenza per lavoro locale
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Alto interesse eventi culturali (>50%)
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Competenze Diversificate Specialistiche ed Informatiche
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center">
+        <p class="text-lg text-gray-300 mb-6 max-w-3xl mx-auto">
+          Questa iniziativa potrebbe essere un'occasione per trasformare 
+          queste criticità in occasioni di sviluppo sostenibile, creando opportunità di lavoro e servizi che permettono ai giovani di restare 
+          e alle famiglie di crescere nel proprio territorio.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="https://www.tuttitalia.it/lazio/82-roviano/statistiche/popolazione-andamento-demografico/" 
+             target="_blank"
+             class="inline-block bg-red-900 hover:bg-green-900 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+            Dati Demografici
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUZIONE -->
+  <section class="py-16 bg-gray-50" id="introduzione">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold green-1300 mb-6">Cos'è una Cooperativa di Comunità</h2>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          Le cooperative di comunità nascono dall'idea di unire le forze dei cittadini 
+          per gestire in modo condiviso servizi, beni comuni e attività economiche, 
+          generando benefici per l'intero territorio.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1: Inclusività -->
+        <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition duration-300 hover:scale-105">
+          <div class="w-20 h-20 mx-auto mb-6 bg-indigo-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 green-1300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-indigo-600 mb-4">Impresa Inclusiva</h3>
+          <p class="text-gray-700">
+            Un modello dove gli abitanti diventano soci, lavoratori e fruitori dei servizi, 
+            abbattendo le barriere tra produttori e consumatori.
+          </p>
+        </div>
+        
+        <!-- Card 2: Condivisione -->
+        <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition duration-300 hover:scale-105">
+          <div class="w-20 h-20 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 green-1300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-red-600 mb-4">Gestione Condivisa</h3>
+          <p class="text-gray-1300">
+            Servizi, beni comuni e attività economiche vengono gestiti collettivamente, 
+            generando benefici tangibili per l'intero territorio.
+          </p>
+        </div>
+        
+        <!-- Card 3: Sviluppo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 text-center transform transition duration-300 hover:scale-105">
+          <div class="w-20 h-20 mx-auto mb-6 bg-yellow-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-yellow-600 mb-4">Sviluppo Territoriale</h3>
+          <p class="text-gray-700">
+            Un modello innovativo che promuove lo sviluppo economico e sociale 
+            valorizzando le risorse e le potenzialità locali.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBITI E ATTIVITÀ -->
+  <section class="py-16 bg-gradient-to-b from-gray-50 to-gray-100" id="ambiti">
+    <div class="container mx-auto px-4">
+      <!-- Header Section -->
+      <div class="max-w-3xl mx-auto mb-12 text-center">
+        <h2 class="text-4xl font-bold text-green-1300 mb-4">Ambiti di Intervento</h2>
+        <p class="text-lg text-gray-600">
+          Dal turismo al sociale, dall'agricoltura all'energia rinnovabile:
+          gli ambiti sono spesso multisettoriali, in base alle vocazioni e le necessità locali.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Turismo e Cultura -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <div class="flex flex-col items-center p-6 border-b border-gray-100">
+            <!-- Compass Icon -->
+            <svg class="w-12 h-12 text-red-700 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <h3 class="text-xl font-semibold text-red-700 text-center">Turismo & Cultura</h3>
+          </div>
+          
+          <!-- Descrizione -->
+          <div class="p-6 border-b border-gray-100 bg-white">
+            <h4 class="font-medium text-gray-700 mb-3">Esempi di Attività:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Gestione ufficio turistico locale</li>
+              <li>• Organizzazione visite guidate e trekking</li>
+              <li>• Gestione B&B diffuso o agriturismo</li>
+              <li>• Eventi culturali e promozione territorio</li>
+            </ul>
+          </div>
+
+          <!-- Benefici -->
+          <div class="p-6 bg-gray-50">
+            <h4 class="font-medium text-gray-700 mb-3">Benefici per la Comunità:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Valorizzazione patrimonio locale</li>
+              <li>• Creazione posti di lavoro</li>
+              <li>• Contrasto allo spopolamento</li>
+              <li>• Aumento attrattività territorio</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Agricoltura e Filiera Corta -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <div class="flex flex-col items-center p-6 border-b border-gray-100">
+            <!-- Leaf Icon -->
+            <svg class="w-12 h-12 text-yellow-700 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <h3 class="text-xl font-semibold text-yellow-700 text-center">Agricoltura & Filiera Corta</h3>
+          </div>
+
+          <!-- Descrizione -->
+          <div class="p-6 border-b border-gray-100 bg-white">
+            <h4 class="font-medium text-gray-700 mb-3">Esempi di Attività:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Consorzio produttori locali</li>
+              <li>• Trasformazione prodotti tipici</li>
+              <li>• Mercati contadini</li>
+              <li>• Bottega prodotti km0</li>
+            </ul>
+          </div>
+
+          <!-- Benefici -->
+          <div class="p-6 bg-gray-50">
+            <h4 class="font-medium text-gray-700 mb-3">Benefici per la Comunità:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Recupero terre incolte</li>
+              <li>• Preservazione tradizioni</li>
+              <li>• Sovranità alimentare</li>
+              <li>• Reddito per agricoltori</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servizi Sociali -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <div class="flex flex-col items-center p-6 border-b border-gray-100">
+            <!-- Heart Icon -->
+            <svg class="w-12 h-12 text-pink-700 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <h3 class="text-xl font-semibold text-pink-700 text-center">Servizi Sociali</h3>
+          </div>
+
+          <!-- Descrizione -->
+          <div class="p-6 border-b border-gray-100 bg-white">
+            <h4 class="font-medium text-gray-700 mb-3">Esempi di Attività:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Assistenza domiciliare anziani</li>
+              <li>• Doposcuola e attività bambini</li>
+              <li>• Trasporto sociale</li>
+              <li>• Spazi aggregativi</li>
+            </ul>
+          </div>
+
+          <!-- Benefici -->
+          <div class="p-6 bg-gray-50">
+            <h4 class="font-medium text-gray-700 mb-3">Benefici per la Comunità:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Supporto fasce deboli</li>
+              <li>• Coesione sociale</li>
+              <li>• Servizi di prossimità</li>
+              <li>• Qualità della vita</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Energia Rinnovabile -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <div class="flex flex-col items-center p-6 border-b border-gray-100">
+            <!-- Sun Icon -->
+            <svg class="w-12 h-12 text-green-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <h3 class="text-xl font-semibold text-green-600 text-center">Energia Rinnovabile</h3>
+          </div>
+
+          <!-- Descrizione -->
+          <div class="p-6 border-b border-gray-100 bg-white">
+            <h4 class="font-medium text-gray-700 mb-3">Esempi di Attività:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Impianti fotovoltaici collettivi</li>
+              <li>• Comunità energetiche</li>
+              <li>• Gestione forestale sostenibile</li>
+              <li>• Riscaldamento biomassa</li>
+            </ul>
+          </div>
+
+          <!-- Benefici -->
+          <div class="p-6 bg-gray-50">
+            <h4 class="font-medium text-gray-700 mb-3">Benefici per la Comunità:</h4>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li>• Risparmio energetico</li>
+              <li>• Sostenibilità ambientale</li>
+              <li>• Autosufficienza energetica</li>
+              <li>• Ricadute economiche locali</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INCENTIVI E FINANZIAMENTI -->
+  <section class="py-16 bg-white" id="incentivi">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold text-green-1300 mb-4">
+          Incentivi & Finanziamenti
+        </h2>
+        <p class="text-xl text-gray-600 mb-6">
+          Esistono diverse agevolazioni a livello nazionale e regionale 
+          per sostenere la nascita e lo sviluppo delle cooperative di comunità.
+        </p>
+      </div>
+
+      <!-- Grid di incentivi -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Fondo Marcora -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="bg-green-900 p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Fondo Legge Marcora</h3>
+            <p class="text-green-100 text-sm">Legge n.49/1985</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Prestiti agevolati fino a 1 milione di euro</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Partecipazione diretta al capitale sociale</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Tassi di interesse vantaggiosi</span>
+              </li>
+            </ul>
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <p class="text-xl text-green-900">
+                Ideale per progetti di avviamento e sviluppo a lungo termine
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fondi Mutualistici -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="bg-green-900 p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Fondi Mutualistici</h3>
+            <p class="text-green-100 text-sm">Coopfond e Fondo Sviluppo</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Contributi per spese di avviamento</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Supporto alla capitalizzazione</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Servizi gratuiti di tutoraggio</span>
+              </li>
+            </ul>
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <p class="text-xl text-green-900">
+                Supporto completo dalla fase iniziale allo sviluppo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bandi Regionali -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="bg-green-900 p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Bandi Regione Lazio</h3>
+            <p class="text-green-100 text-sm">Legge Regionale n.1/2021</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Contributi a fondo perduto</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">IRAP ridotta e incentivi assunzioni</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Concessione prioritaria beni pubblici</span>
+              </li>
+            </ul>
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <p class="text-xl text-green-900">
+                Vantaggi esclusivi per cooperative iscritte all'albo regionale
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fondi Europei -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="bg-green-900 p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Fondi Europei</h3>
+            <p class="text-green-100 text-sm">GAL e Programma LEADER</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Progetti di sviluppo rurale</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Turismo sostenibile e servizi innovativi</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Supporto aree interne</span>
+              </li>
+            </ul>
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <p class="text-xl text-green-900">
+                Opportunità per progetti innovativi e sostenibili
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUTTURA E ORGANIZZAZIONE -->
+  <section class="py-16 bg-gradient-to-b from-gray-50 to-gray-100" id="struttura">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto mb-12 text-center">
+        <h2 class="text-4xl font-bold text-green-1300 mb-4">
+          Struttura & Governance
+        </h2>
+        <p class="text-xl text-gray-600 mb-6">
+          Una cooperativa di comunità efficace si basa su partecipazione, 
+          flessibilità e solidità gestionale. La governance è democratica e inclusiva.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Base Sociale -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="p-6 border-b border-gray-100 bg-red-700 text-white">
+            <h3 class="text-xl font-semibold mb-2">Base Sociale Inclusiva</h3>
+            <p class="text-sm text-green-100">Fondamento della Comunità</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Residenti, associazioni e imprese locali</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Una Testa, un Voto</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Competenze locali diversificate</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Multi-stakeholder -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="p-6 border-b border-gray-100 bg-red-700 text-white">
+            <h3 class="text-xl font-semibold mb-2">Multi-stakeholder</h3>
+            <p class="text-sm text-green-100">Categorie di Soci</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Soci lavoratori e volontari</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Soci fruitori e sostenitori</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Mutualità prevalente verso i soci</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Organizzazione -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="p-6 border-b border-gray-100 bg-red-700 text-white">
+            <h3 class="text-xl font-semibold mb-2">Organizzazione</h3>
+            <p class="text-sm text-green-100">Struttura Flessibile</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Divisioni per aree d'intervento</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">CDA rappresentativo (5-7 membri)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Assemblee periodiche partecipative</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sostenibilità -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="p-6 border-b border-gray-100 bg-red-700 text-white">
+            <h3 class="text-xl font-semibold mb-2">Sostenibilità</h3>
+            <p class="text-sm text-green-100">Gestione Professionale</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Business plan diversificato</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Economia circolare interna</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-700 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-600">Formazione e competenze manageriali</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota Finale -->
+      <div class="mt-12 max-w-3xl mx-auto text-center">
+        <div class="bg-white rounded-lg p-6 shadow-lg">
+          <h4 class="text-lg font-semibold text-red-700 mb-3">Reti e Partenariati</h4>
+          <p class="text-gray-600">
+            La cooperativa di comunità opera come piattaforma collaborativa locale, 
+            creando sinergie con Comune, associazioni e altre realtà territoriali. 
+            L'adesione a reti regionali e nazionali facilita lo scambio di buone pratiche 
+            e l'accesso a opportunità di sviluppo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI DI SUCCESSO -->
+  <section class="py-16 bg-white" id="successo">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold text-green-1300 mb-4">Casi di Successo</h2>
+        <p class="text-xl text-gray-600 mb-6">
+          Borghi che hanno ritrovato vitalità grazie all'impegno delle comunità locali.
+          Ecco alcuni esempi virtuosi che ispirano il nostro progetto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Valle dei Cavalieri - Succiso -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <img src="static\2025-02-26 18_56_58-.png" alt="Succiso" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-xl font-semibold text-blue-700">Succiso (RE)</h3>
+              <span class="bg-blue-100 text-green-700 text-xs px-2 py-1 rounded">Dal 1991</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+              La prima cooperativa di comunità italiana. Ha trasformato un borgo a rischio abbandono in un modello di sviluppo sostenibile.
+            </p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-2">
+              <li>• Bar, bottega e agriturismo km0</li>
+              <li>• Produzione formaggi DOP</li>
+              <li>• Servizi sociali e trasporti</li>
+              <li>• Impianto fotovoltaico comunitario</li>
+            </ul>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-700 font-medium">100% gestione locale</span>
+              <a href="https://valledeicavalieri.it" target="_blank" class="text-blue-700 hover:text-green-800 font-medium flex items-center">
+                Scopri di più
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Melpignano -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <img src="static\2025-02-26 18_57_29-Comunità Cooperativa Melpignano.png" alt="Melpignano" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-xl font-semibold text-blue-700">Melpignano (LE)</h3>
+              <span class="bg-blue-100 text-green-700 text-xs px-2 py-1 rounded">Dal 2011</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+              Pioniera dell'energia condivisa, ha creato una rete di 33 impianti fotovoltaici sui tetti delle abitazioni.
+            </p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-2">
+              <li>• 179 kW di potenza installata</li>
+              <li>• 119t CO₂ evitate annualmente</li>
+              <li>• 54 Case dell'Acqua installate</li>
+              <li>• 6 posti di lavoro creati</li>
+            </ul>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-700 font-medium">270+ soci cittadini</span>
+              <a href="https://coopcomunitamelpignano.it" target="_blank" class="text-blue-700 hover:text-green-800 font-medium flex items-center">
+                Scopri di più
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biccari -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+          <img src="static\2025-02-26 18_58_34-Cooperativa di Comunità Biccari.png" alt="Biccari" class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-xl font-semibold text-blu-700">Biccari (FG)</h3>
+              <span class="bg-blue-100 text-green-700 text-xs px-2 py-1 rounded">Dal 2017</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+              Un modello di turismo innovativo che ha rivitalizzato l'economia locale creando occupazione giovanile.
+            </p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-2">
+              <li>• Parco Avventura e Bubble Room</li>
+              <li>• 150 lavoratori coinvolti</li>
+              <li>• Gestione area naturalistica</li>
+              <li>• Filiera corta prodotti locali</li>
+            </ul>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-700 font-medium">220 soci attivi</span>
+              <a href="https://www.coopbiccari.it/" target="_blank" class="text-blue-700 hover:text-green-800 font-medium flex items-center">
+                Scopri di più
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+
+<!-- FOOTER -->
+<footer class="bg-black py-4">
+  <div class="container mx-auto px-4 text-center text-sm text-white">
+    <p>© 2025 Rovi - Spazio Creativo</p>
+    <p>https://rovispaziocrea.github.io/rovi</p>
+  </div>
+</footer>
+</body>
+</html>
